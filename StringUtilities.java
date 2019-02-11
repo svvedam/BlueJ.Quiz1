@@ -5,7 +5,7 @@ public class StringUtilities {
      * @return `input`
      */
     public String returnInput(String input) {
-        return null;
+        return input;
     }
 
     /**
@@ -14,7 +14,8 @@ public class StringUtilities {
      * @return the concatenation of `baseValue` and `valueToBeAdded`
      */
     public String concatenate(String baseValue, String valueToBeAdded) {
-        return null;
+        String concatString = baseValue + valueToBeAdded;
+        return concatString;
     }
 
     /**
@@ -22,7 +23,11 @@ public class StringUtilities {
      * @return identical string with characters in opposite order
      */
     public String reverse(String valueToBeReversed) {
-        return null;
+        StringBuilder sb = new StringBuilder();
+        sb.append(valueToBeReversed);
+        sb = sb.reverse();
+        
+        return sb.toString();
     }
 
     /**
@@ -30,7 +35,16 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        return null;
+        char a;
+        int length = word.length();
+        if(length%2 == 0){
+            a = word.charAt((length/2)-1);
+        }
+        else
+        {
+            a = word.charAt(length/2);
+        }
+        return a;
     }
 
     /**
@@ -39,7 +53,13 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        return null;
+       
+        for(int i = 0; i < value.length(); i++){
+            if(value.charAt(i)==charToRemove){
+                value = value.replaceFirst(String.valueOf(value.charAt(i)),"");
+            }
+        }
+        return value;
     }
 
     /**
@@ -47,6 +67,8 @@ public class StringUtilities {
      * @return last `word` in sentence
      */
     public String getLastWord(String sentence) {
-        return null;
+        String [] parts = sentence.split(" ");
+        String lastWord = parts[parts.length-1];
+        return lastWord;
     }
 }
